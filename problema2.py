@@ -7,5 +7,6 @@
 #         20 90 hola jiji 77
 #La salida debe ser
 #         (77, 'jiji', 'hola', 90, 20)
-t = input()
-print(t)
+t = tuple(input().split())
+r = tuple(reversed(t))
+print(r)
