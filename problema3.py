@@ -9,5 +9,31 @@
 #         20 30 90 90 8 5 90
 #La salida debe ser
 #         [20, [8, [5, [], [], []], [], []], [], [30, [], [], [90, [], [90, [], [90, [], [], []], []], []]]]
-t = input()
-print(t)
+valores = list(map(int, input().split()))
+arbol = []
+for valor in valores:
+    if arbol == []:
+        arbol = [valor, [], [], []]
+    else:
+        nodo = arbol
+        while True:
+            if valor < nodo[0]:
+                if nodo[1] == []:
+                    nodo[1] = [valor, [], [], []]
+                    break
+                else:
+                    nodo = nodo[1]
+            elif valor > nodo[0]:
+                if nodo[3] == []:
+                    nodo[3] = [valor, [], [], []]
+                    break
+                else:
+                    nodo = nodo[3]
+            else:
+                if nodo[2] == []:
+                    nodo[2] = [valor, [], [], []]
+                    break
+                else:
+                    nodo = nodo[2]
+print(arbol)
+
