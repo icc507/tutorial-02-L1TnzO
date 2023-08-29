@@ -9,9 +9,10 @@
 #		  mundo 44
 #La salida debe ser
 #         ('mundo', 44, 20, 90, 'hola', 'mundo', 44)
-t = tuple(input().split())
-m = tuple(input().split())
+t = tuple(int(x) if x.isdigit() else x for x in input().split())
+m = tuple(int(x) if x.isdigit() else x for x in input().split())
 
 r = m + t + m
 
 print(r)
+
